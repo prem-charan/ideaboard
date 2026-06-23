@@ -9,11 +9,14 @@
     "dev": "npm run build && npm run start"
   },
   "devDependencies": {
+    "@repo/backend-common": "workspace:*",
     "@repo/typescript-config": "workspace:*",
+    "@repo/common": "workspace:*",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/ws": "^8.18.1"
   },
   "dependencies": {
+    "dotenv": "^17.4.2",
     "jsonwebtoken": "^9.0.3",
     "ws": "^8.21.0"
   },
