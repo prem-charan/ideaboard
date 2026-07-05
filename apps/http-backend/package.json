@@ -10,16 +10,17 @@
     },
     "devDependencies": {
         "@repo/backend-common": "workspace:*",
-        "@repo/typescript-config": "workspace:*",
         "@repo/common": "workspace:*",
+        "@repo/typescript-config": "workspace:*",
         "@types/express": "^5.0.6",
         "@types/jsonwebtoken": "^9.0.10"
     },
     "dependencies": {
+        "@repo/db": "workspace:*",
+        "argon2": "^0.44.0",
         "dotenv": "^17.4.2",
         "express": "^5.2.1",
-        "jsonwebtoken": "^9.0.3",
-        "@repo/db": "workspace:*"
+        "jsonwebtoken": "^9.0.3"
     },
     "keywords": [],
     "author": "",
