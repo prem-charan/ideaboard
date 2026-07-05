@@ -1,9 +1,8 @@
-import "dotenv/config";
 import express from "express";
 import jwt from "jsonwebtoken";
 import { middleware } from "./middleware";
 import { getJwtSecret } from "@repo/backend-common/config";
-import { CreateRoomSchema, CreateUserSchema, SigninSchema } from "@repo/common/types"
+import { CreateRoomSchema, CreateUserSchema, SigninSchema } from "@repo/common/types";
 import { prismaClient } from "@repo/db/client";
 
 const app = express();
@@ -18,7 +17,7 @@ app.post("/signup",async (req, res) => {
         return;
     }
     try {
-        await prismaClient.user.create({
+        const user = await prismaClient.user.create({
             data: {
                 email: parsedData.data.email,
                 password: parsedData.data.password,
@@ -26,11 +25,11 @@ app.post("/signup",async (req, res) => {
             }
         })
         res.json({
-            userId: "12345"
+            userId: user.id
         })
     } catch (e) {
         res.status(409).json({
-            message: "user already exits with this email"
+            message: e
         })
     }
 })
